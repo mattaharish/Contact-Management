@@ -1,0 +1,16 @@
+{
+  "development": {
+    "host": "localhost",
+    "user": "root",
+    "password": "matta",
+    "database": "plivoc",
+    "secret": "plivo_contact",
+    "connectionLimit": 15,
+    "tokenExpiry": 86400
+  },
+  "production": {
+    "host": "***********",
+    "user": "root",
+    "password": "*******"
+  }
+}
