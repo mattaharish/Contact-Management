@@ -11,7 +11,9 @@ const { getContacts, getContact,
 const getContactRecords = async (req, res) => {
   try {
     let offset = 0
-    const { limit = 10, page = 1, search ='' } = req.query
+    const { search = '' } = req.query
+    const {limit = 10} = Number(req.query.limit)
+    const {page = 1} = Number(req.query.page)
     if(page > 1) {
       offset = page * limit
     }

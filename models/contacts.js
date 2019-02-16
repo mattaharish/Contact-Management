@@ -5,15 +5,18 @@ const { updateQuery, insertQuery } = require('../helpers/dbhelper')
 
 const getContacts = async (offset, limit, search) => {
   let query = "select * from `contacts_book` "
+  const values = []
   if(search != '') {
+    search = "%" +search + "%"
+    values.push(search, search, search)
     query = query + "where first_name like ? || last_name like ? || email like ? "
   }
+  values.push(limit, offset)
   query = query +  "limit ? offset ?"
 
   try {
     console.debug('Executing ', query)
-    search = "%" +search + "%"
-    const contacts = await userSafeQuery(query, [search, search, search, limit, offset])
+    const contacts = await userSafeQuery(query, values)
     console.debug('Execution result ', contacts)
     return contacts
   } catch (ex) {
