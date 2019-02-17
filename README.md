@@ -18,6 +18,27 @@
 * Now run `npm install`
 * Then run `npm start`
 
+## Endpoints
+```
+Running on port 3000
+
+1. Crete a user - "/api/v1/users" [POST]
+2. User Login - "/api/v1/users/login" [POST]
+
+** Auth required for below routes **
+
+3. Create a contact - "/api/v1/contacts" [POST]
+4. Get all contacts - "/api/v1/contacts" [GET]
+5. Pagination - "/api/v1/contacts?page={Number}" [GET]
+6. Search a contact - "/api/v1/contacts?search={search-term}" [GET]
+7. Limit contacts - "/api/v1/contacts?limit={Number}" [GET]
+
+(5,6,7 APIs can be interchanebly called)
+
+8. Get a contact by id - "/api/v1/contacts/{contactID}" [GET]
+9. Delete a contact by id - "/api/v1/contacts/{contactID}" [DELETE]
+10. Update a contact by id - "/api/v1/contacts/{ContactID}" [PATCH]
+```
 
 ## Authors
 
